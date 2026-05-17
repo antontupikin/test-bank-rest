@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: demo
+  codec:
+    max-in-memory-size: 10MB
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: secret
+    url: jdbc:postgresql://localhost:5432/appdb
+    username: app
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 20
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  liquibase:
+    change-log: classpath:db/migration/db.changelog-master.xml
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+security:
+  jwt:
+    expiration: 1h
+    refreshExpiration: 1d
+    secret-key: ${SECURITY_JWT_SECRET_KEY:}
+reset-token:
+  length: 12
+  expire: 1h
+
+crypto:
+  password: ${CRYPTO_PASSWORD:}

@@ -1,0 +1,18 @@
+security:
+  jwt:
+    expiration: 1h
+    refreshExpiration: 1d
+    secret-key: test
+spring:
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  liquibase:
+    change-log: classpath:db/migration/db.changelog-master.xml
+reset-token:
+  length: 12
+  expire: 1h
+crypto:
+  password: testTest

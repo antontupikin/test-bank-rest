@@ -134,4 +134,3 @@ docker compose up --build
 ## Документация
 
 - Swagger UI: `http://localhost:8080/swagger-ui.html`
-- OpenAPI файл: `docs/openapi.yaml`
